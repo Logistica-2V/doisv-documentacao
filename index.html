@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
@@ -17,56 +20,98 @@
             background-color: #0d1117;
             color: #c9d1d9;
         }
+
         .token.property {
             color: #79c0ff !important;
         }
+
         .token.string {
             color: #a5d6ff !important;
         }
+
         .token.number {
             color: #79c0ff !important;
         }
+
         .token.boolean {
             color: #ffab70 !important;
         }
+
         .token.null {
             color: #ff7b72 !important;
         }
+
         .token.operator {
             color: #c9d1d9 !important;
         }
+
         pre[class*="language-"] {
             background: #161b22;
             border: 1px solid #30363d;
             border-radius: 6px;
         }
-        code[class*="language-"], pre[class*="language-"] {
+
+        code[class*="language-"],
+        pre[class*="language-"] {
             font-family: 'Roboto Mono', monospace;
         }
-        .method-get { background-color: #28a745; color: white; }
-        .method-post { background-color: #ffc107; color: black; }
-        .method-put { background-color: #007bff; color: white; }
-        .method-delete { background-color: #dc3545; color: white; }
-        
-        .status-2xx { color: #28a745; }
-        .status-4xx { color: #ffc107; }
-        .status-5xx { color: #dc3545; }
+
+        .method-get {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .method-post {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        .method-put {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .method-delete {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .method-patch {
+            background-color: #6f42c1;
+            color: white;
+        }
+
+        .status-2xx {
+            color: #28a745;
+        }
+
+        .status-4xx {
+            color: #ffc107;
+        }
+
+        .status-5xx {
+            color: #dc3545;
+        }
 
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #161b22;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #30363d;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #484f58;
         }
     </style>
 </head>
+
 <body class="bg-gray-900 text-gray-300">
 
     <div class="flex min-h-screen">
@@ -75,22 +120,37 @@
             <h1 class="text-2xl font-bold text-white mb-8">API DoisV</h1>
             <nav>
                 <ul class="space-y-4">
-                    <li><a href="#autenticacao" class="font-semibold text-gray-400 hover:text-white transition-colors">Autenticação</a></li>
-                    <li><a href="#lojas" class="font-semibold text-gray-400 hover:text-white transition-colors">Lojas</a></li>
-                    <li><a href="#lojistas" class="font-semibold text-gray-400 hover:text-white transition-colors">Lojistas</a></li>
-                    <li><a href="#consumidores" class="font-semibold text-gray-400 hover:text-white transition-colors">Consumidores</a></li>
-                    <li><a href="#vendas" class="font-semibold text-gray-400 hover:text-white transition-colors">Vendas</a></li>
+                    <li><a href="#autenticacao"
+                            class="font-semibold text-gray-400 hover:text-white transition-colors">Autenticação</a></li>
+                    <li><a href="#lojas"
+                            class="font-semibold text-gray-400 hover:text-white transition-colors">Lojas</a></li>
+                    <li><a href="#lojistas"
+                            class="font-semibold text-gray-400 hover:text-white transition-colors">Lojistas</a></li>
+                    <li><a href="#consumidores"
+                            class="font-semibold text-gray-400 hover:text-white transition-colors">Consumidores</a></li>
+                    <li><a href="#produtos"
+                            class="font-semibold text-gray-400 hover:text-white transition-colors">Produtos</a></li>
+                    <li><a href="#vendas"
+                            class="font-semibold text-gray-400 hover:text-white transition-colors">Vendas</a></li>
+                    <li><a href="#solicitacoes"
+                            class="font-semibold text-gray-400 hover:text-white transition-colors">Solicitações</a></li>
+                    <li><a href="#feedbacks"
+                            class="font-semibold text-gray-400 hover:text-white transition-colors">Feedbacks</a></li>
+                    <li><a href="#metricas"
+                            class="font-semibold text-gray-400 hover:text-white transition-colors">Métricas</a></li>
                 </ul>
             </nav>
         </aside>
 
         <!-- Conteúdo Principal -->
         <main class="w-full lg:w-4/5 p-4 md:p-8 lg:p-12">
-            
+
             <!-- Seção Autenticação -->
             <section id="autenticacao" class="mb-16">
                 <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Autenticação</h2>
-                
+                <p class="mb-8 bg-green-900/50 border border-green-700 p-4 rounded-md">Todos os endpoints nesta seção
+                    são <strong>públicos</strong> e não exigem autenticação.</p>
+
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">1. Login de Lojista</h3>
                     <p class="mb-4">Autentica um lojista no sistema e retorna um token de acesso.</p>
@@ -112,42 +172,129 @@
                         <ul class="list-disc list-inside space-y-1">
                             <li><span class="font-mono status-2xx">200 OK</span>: Autenticação bem-sucedida.</li>
                             <li><span class="font-mono status-4xx">401 Unauthorized</span>: Credenciais inválidas.</li>
-                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação.
+                            </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">2. Login de Consumidor</h3>
-                    <p class="mb-4">Autentica um consumidor no sistema e retorna um token de acesso.</p>
+                    <p class="mb-4">Autentica um consumidor no sistema usando o serial da venda e a senha, retornando um
+                        token de acesso.</p>
                     <div class="mb-4">
                         <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
-                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/consumidores/login</code>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/login/consumidores</code>
                     </div>
                     <div class="space-y-4">
                         <h4 class="font-semibold text-white">Request Body:</h4>
                         <pre><code class="language-json">{
-  "email": "consumidor@email.com",
-  "password": "outra_senha_secreta"
+  "serial": "VENDA-20251017-XYZ",
+  "senha": "sua_senha_secreta"
 }</code></pre>
                         <h4 class="font-semibold text-white">Response Body:</h4>
                         <pre><code class="language-json">{
   "token": "string"
 }</code></pre>
-                         <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
                             <li><span class="font-mono status-2xx">200 OK</span>: Autenticação bem-sucedida.</li>
-                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Credenciais inválidas.</li>
-                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Serial ou senha inválidos.
+                            </li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">3. Recuperar Senha do Lojista</h3>
+                    <p class="mb-4">Envia um código de recuperação de senha para o e-mail do lojista.</p>
+                    <div class="mb-4">
+                        <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/login/lojista/recuperar-senha</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body:</h4>
+                        <pre><code class="language-json">{
+  "email": "lojista@email.com"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">"Código de recuperação enviado para o email lojista@email.com"</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: E-mail de recuperação enviado com
+                                sucesso.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Lojista não encontrado com este
+                                e-mail.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Usuário inativo.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">4. Validar Código de Recuperação</h3>
+                    <p class="mb-4">Valida o código de recuperação de senha enviado por e-mail para o lojista.</p>
+                    <div class="mb-4">
+                        <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/login/lojista/validar-recuperacao</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body:</h4>
+                        <pre><code class="language-json">{
+  "email": "lojista@email.com",
+  "codigoRecuperacao": "123456"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <p class="text-sm">Sem corpo de resposta (resposta vazia).</p>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Código de recuperação válido.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Código de recuperação inválido.
+                            </li>
+                            <li><span class="font-mono status-4xx">410 Gone</span>: Código de recuperação expirado.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Código já utilizado.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">5. Atualizar Senha do Lojista</h3>
+                    <p class="mb-4">Atualiza a senha do lojista após a validação do código de recuperação. A nova senha
+                        deve ter no mínimo 8 caracteres.</p>
+                    <div class="mb-4">
+                        <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/login/lojista/atualizar-senha</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body:</h4>
+                        <pre><code class="language-json">{
+  "email": "lojista@email.com",
+  "codigoRecuperacao": "123456",
+  "novaSenha": "nova_senha_forte"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">"Senha atualizada com sucesso."</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Senha atualizada com sucesso.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Código de recuperação inválido.
+                            </li>
+                            <li><span class="font-mono status-4xx">410 Gone</span>: Código de recuperação expirado.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Senha fraca (mínimo
+                                8 caracteres) ou código já utilizado.</li>
                         </ul>
                     </div>
                 </div>
             </section>
-            
+
             <!-- Seção Lojas -->
             <section id="lojas" class="mb-16">
                 <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Lojas</h2>
-                <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Todos os endpoints nesta seção exigem autenticação via Bearer Token.</p>
+                <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Todos os endpoints nesta seção
+                    exigem autenticação via Bearer Token e são restritos ao perfil <strong>Lojista</strong>.</p>
 
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">1. Buscar Todas as Lojas</h3>
@@ -156,7 +303,7 @@
                         <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
                         <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/lojas</code>
                     </div>
-                     <div class="space-y-4">
+                    <div class="space-y-4">
                         <h4 class="font-semibold text-white">Response Body:</h4>
                         <pre><code class="language-json">[
   {
@@ -171,8 +318,8 @@
 ]</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
                         </ul>
                     </div>
                 </div>
@@ -184,7 +331,7 @@
                         <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
                         <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/lojas/{id}</code>
                     </div>
-                     <div class="space-y-4">
+                    <div class="space-y-4">
                         <h4 class="font-semibold text-white">Response Body:</h4>
                         <pre><code class="language-json">{
   "idLoja": 1,
@@ -197,21 +344,22 @@
 }</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Loja não encontrada.</li>
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Loja não encontrada.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">3. Criar uma Nova Loja</h3>
-                    <p class="mb-4">Cria um novo registro de loja. A requisição deve ser do tipo `multipart/form-data`.</p>
+                    <p class="mb-4">Cria um novo registro de loja. A requisição deve ser do tipo `multipart/form-data`.
+                    </p>
                     <div class="mb-4">
                         <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
                         <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/lojas</code>
                     </div>
-                     <div class="space-y-4">
+                    <div class="space-y-4">
                         <h4 class="font-semibold text-white">Request Body (multipart/form-data):</h4>
                         <p class="text-sm">Parte 1: `loja` (application/json)</p>
                         <pre><code class="language-json">{
@@ -233,23 +381,24 @@
 }</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">201 Created</span>: Loja criada com sucesso.</li>
-                           <li><span class="font-mono status-4xx">400 Bad Request</span>: Requisição malformada.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">409 Conflict</span>: CNPJ já cadastrado.</li>
-                           <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação.</li>
+                            <li><span class="font-mono status-2xx">201 Created</span>: Loja criada com sucesso.</li>
+                            <li><span class="font-mono status-4xx">400 Bad Request</span>: Requisição malformada.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: CNPJ já cadastrado.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação.
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-                 <div class="mb-12">
+                <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">4. Atualizar uma Loja</h3>
                     <p class="mb-4">Atualiza os dados de uma loja existente. Requisição `multipart/form-data`.</p>
                     <div class="mb-4">
                         <span class="method-put text-sm font-bold mr-2 px-2.5 py-1 rounded">PUT</span>
                         <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/lojas/{id}</code>
                     </div>
-                     <div class="space-y-4">
+                    <div class="space-y-4">
                         <h4 class="font-semibold text-white">Request Body (multipart/form-data):</h4>
                         <p class="text-sm">Parte 1: `loja` (application/json)</p>
                         <pre><code class="language-json">{
@@ -269,11 +418,12 @@
 }</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">200 OK</span>: Loja atualizada com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Loja não encontrada.</li>
-                           <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação.</li>
+                            <li><span class="font-mono status-2xx">200 OK</span>: Loja atualizada com sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Loja não encontrada.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -282,45 +432,49 @@
                     <h3 class="text-2xl font-semibold mb-4 text-white">5. Desativar uma Loja (Soft Delete)</h3>
                     <p class="mb-4">Desativa uma loja, mantendo o registro no banco de dados.</p>
                     <div class="mb-4">
-                        <span class="method-delete text-sm font-bold mr-2 px-2.5 py-1 rounded">DELETE</span>
+                        <span class="method-patch text-sm font-bold mr-2 px-2.5 py-1 rounded">PATCH</span>
                         <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/lojas/{id}</code>
                     </div>
-                     <div class="space-y-4">
+                    <div class="space-y-4">
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">204 No Content</span>: Loja desativada com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Loja não encontrada.</li>
+                            <li><span class="font-mono status-2xx">204 No Content</span>: Loja desativada com sucesso.
+                            </li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Loja não encontrada.</li>
                         </ul>
                     </div>
                 </div>
-                
-                 <div class="mb-12">
+
+                <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">6. Deletar uma Loja (Permanent Delete)</h3>
                     <p class="mb-4">Remove permanentemente o registro de uma loja do sistema.</p>
                     <div class="mb-4">
                         <span class="method-delete text-sm font-bold mr-2 px-2.5 py-1 rounded">DELETE</span>
                         <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/lojas/{id}/permanent</code>
                     </div>
-                     <div class="space-y-4">
+                    <div class="space-y-4">
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">204 No Content</span>: Loja removida com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Loja não encontrada.</li>
+                            <li><span class="font-mono status-2xx">204 No Content</span>: Loja removida com sucesso.
+                            </li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Loja não encontrada.</li>
                         </ul>
                     </div>
                 </div>
 
             </section>
-            
+
             <!-- Seção Lojistas -->
             <section id="lojistas" class="mb-16">
-                 <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Lojistas</h2>
-                 <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Todos os endpoints nesta seção exigem autenticação via Bearer Token.</p>
-                
+                <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Lojistas</h2>
+                <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Todos os endpoints nesta seção
+                    exigem autenticação via Bearer Token e são restritos ao perfil <strong>Lojista</strong>, exceto a
+                    criação de lojistas que requer perfil <strong>Admin</strong>.</p>
+
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">1. Buscar Lojista por ID</h3>
                     <p class="mb-4">Retorna os detalhes de um lojista específico com base no seu ID.</p>
@@ -341,15 +495,18 @@
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
                             <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
-                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido, expirado ou não fornecido.</li>
-                            <li><span class="font-mono status-4xx">404 Not Found</span>: Nenhum lojista encontrado com o ID fornecido.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido, expirado ou
+                                não fornecido.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Nenhum lojista encontrado com o
+                                ID fornecido.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">2. Buscar Perfil do Lojista Logado</h3>
-                    <p class="mb-4">Retorna os detalhes do lojista associado ao token de autenticação enviado no cabeçalho.</p>
+                    <p class="mb-4">Retorna os detalhes do lojista associado ao token de autenticação enviado no
+                        cabeçalho.</p>
                     <div class="mb-4">
                         <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
                         <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/lojistas/profile</code>
@@ -367,19 +524,21 @@
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
                             <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
-                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não fornecido.</li>
-                            <li><span class="font-mono status-4xx">404 Not Found</span>: Nenhum lojista encontrado para o ID contido no token.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Nenhum lojista encontrado para
+                                o ID contido no token.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="mb-12">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">3. Buscar Todos os Lojistas</h3>
-                    <p class="mb-4">Retorna uma lista com todos os lojistas cadastrados. Pode ser filtrado por ID da loja.</p>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">3. Buscar Todos os Lojistas da Loja</h3>
+                    <p class="mb-4">Retorna uma lista com todos os lojistas associados à loja do lojista autenticado.
+                    </p>
                     <div class="mb-4">
                         <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
-                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/lojistas</code> ou 
-                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/lojistas?lojaId=5</code>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/lojistas</code>
                     </div>
                     <div class="space-y-4">
                         <h4 class="font-semibold text-white">Response Body:</h4>
@@ -395,15 +554,18 @@
 ]</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não fornecido.</li>
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">4. Criar um Novo Lojista</h3>
-                    <p class="mb-4">Cria um novo registro de lojista no sistema.</p>
+                    <p class="mb-4">Cria um novo registro de lojista para a loja do lojista autenticado. <span
+                            class="bg-yellow-900/50 border border-yellow-700 text-yellow-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Admin</span></p>
                     <div class="mb-4">
                         <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
                         <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/lojistas</code>
@@ -414,8 +576,7 @@
   "nome": "Carlos Atendente",
   "cpf": "333.333.333-33",
   "email": "carlos.atendente@loja.com",
-  "password": "senha_forte_123",
-  "idLoja": 5
+  "password": "senha_forte_123"
 }</code></pre>
                         <h4 class="font-semibold text-white">Response Body:</h4>
                         <pre><code class="language-json">{
@@ -428,11 +589,14 @@
 }</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">201 Created</span>: Lojista criado com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não fornecido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Associação não permitida.</li>
-                           <li><span class="font-mono status-4xx">409 Conflict</span>: E-mail ou CPF já cadastrado.</li>
-                           <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação nos campos.</li>
+                            <li><span class="font-mono status-2xx">201 Created</span>: Lojista criado com sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Associação não permitida.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: E-mail ou CPF já cadastrado.
+                            </li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
                         </ul>
                     </div>
                 </div>
@@ -450,8 +614,7 @@
   "nome": "Carlos Atendente Atualizado",
   "cpf": "333.333.333-33",
   "email": "carlos.atendente@loja.com",
-  "password": "nova_senha_secreta",
-  "idLoja": 5
+  "password": "nova_senha_secreta"
 }</code></pre>
                         <h4 class="font-semibold text-white">Response Body:</h4>
                         <pre><code class="language-json">{
@@ -464,11 +627,13 @@
 }</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">200 OK</span>: Lojista atualizado com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não fornecido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Lojista não encontrado.</li>
-                           <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação nos campos.</li>
+                            <li><span class="font-mono status-2xx">200 OK</span>: Lojista atualizado com sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Lojista não encontrado.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
                         </ul>
                     </div>
                 </div>
@@ -485,10 +650,13 @@
                         <pre><code class="language-json">[1, 3, 8]</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">204 No Content</span>: Lojistas desativados com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não fornecido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Um ou mais IDs não encontrados.</li>
+                            <li><span class="font-mono status-2xx">204 No Content</span>: Lojistas desativados com
+                                sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Um ou mais IDs não encontrados.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -503,23 +671,27 @@
                     <div class="space-y-4">
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">204 No Content</span>: Lojista removido com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não fornecido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Lojista não encontrado.</li>
+                            <li><span class="font-mono status-2xx">204 No Content</span>: Lojista removido com sucesso.
+                            </li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Lojista não encontrado.</li>
                         </ul>
                     </div>
                 </div>
             </section>
-            
+
             <!-- Seção Consumidores -->
             <section id="consumidores" class="mb-16">
-                 <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Consumidores</h2>
-                 <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Todos os endpoints nesta seção exigem autenticação via Bearer Token.</p>
-                
+                <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Consumidores</h2>
+                <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Todos os endpoints nesta seção
+                    exigem autenticação via Bearer Token e são restritos ao perfil <strong>Lojista</strong>.</p>
+
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">1. Buscar Todos os Consumidores da Loja</h3>
-                    <p class="mb-4">Retorna uma lista com todos os consumidores associados à loja do lojista autenticado.</p>
+                    <p class="mb-4">Retorna uma lista com todos os consumidores associados à loja do lojista
+                        autenticado.</p>
                     <div class="mb-4">
                         <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
                         <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/consumidores</code>
@@ -541,7 +713,8 @@
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
                             <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
-                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido, expirado ou não fornecido.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido, expirado ou
+                                não fornecido.</li>
                         </ul>
                     </div>
                 </div>
@@ -569,7 +742,8 @@
                         <ul class="list-disc list-inside space-y-1">
                             <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
                             <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                            <li><span class="font-mono status-4xx">404 Not Found</span>: Nenhum consumidor encontrado com o ID fornecido.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Nenhum consumidor encontrado
+                                com o ID fornecido.</li>
                         </ul>
                     </div>
                 </div>
@@ -603,10 +777,13 @@
 }</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">201 Created</span>: Consumidor criado com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">409 Conflict</span>: CPF/CNPJ ou e-mail já cadastrado.</li>
-                           <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação nos campos.</li>
+                            <li><span class="font-mono status-2xx">201 Created</span>: Consumidor criado com sucesso.
+                            </li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: CPF/CNPJ ou e-mail já
+                                cadastrado.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
                         </ul>
                     </div>
                 </div>
@@ -640,20 +817,23 @@
 }</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">200 OK</span>: Consumidor atualizado com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Consumidor não encontrado.</li>
-                           <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação nos campos.</li>
+                            <li><span class="font-mono status-2xx">200 OK</span>: Consumidor atualizado com sucesso.
+                            </li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Consumidor não encontrado.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="mb-12">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">5. Desativar Consumidores em Lote (Soft Delete)</h3>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">5. Desativar Consumidores em Lote (Soft Delete)
+                    </h3>
                     <p class="mb-4">Desativa um ou mais consumidores com base em uma lista de IDs.</p>
                     <div class="mb-4">
-                        <span class="method-delete text-sm font-bold mr-2 px-2.5 py-1 rounded">DELETE</span>
+                        <span class="method-patch text-sm font-bold mr-2 px-2.5 py-1 rounded">PATCH</span>
                         <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/consumidores</code>
                     </div>
                     <div class="space-y-4">
@@ -661,10 +841,12 @@
                         <pre><code class="language-json">[1, 2]</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">204 No Content</span>: Consumidores desativados com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Um ou mais IDs não encontrados.</li>
+                            <li><span class="font-mono status-2xx">204 No Content</span>: Consumidores desativados com
+                                sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Um ou mais IDs não encontrados.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -679,10 +861,285 @@
                     <div class="space-y-4">
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">204 No Content</span>: Consumidor removido com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Consumidor não encontrado.</li>
+                            <li><span class="font-mono status-2xx">204 No Content</span>: Consumidor removido com
+                                sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Consumidor não encontrado.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Seção Produtos -->
+            <section id="produtos" class="mb-16">
+                <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Produtos</h2>
+                <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Todos os endpoints nesta seção
+                    exigem autenticação via Bearer Token e são restritos ao perfil <strong>Lojista</strong>.</p>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">1. Buscar Produto por ID</h3>
+                    <p class="mb-4">Retorna os detalhes de um produto específico da loja do lojista autenticado.</p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/produtos/{id}</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "idProduto": 1,
+  "descricao": "Camiseta Branca",
+  "unidadeMedida": "UN",
+  "preco": 94.90,
+  "imagem": "1a2b3c4d5e",
+  "status": "ATIVO"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Produto pertence a outra loja.
+                            </li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Produto não encontrado.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">2. Buscar Todos os Produtos da Loja</h3>
+                    <p class="mb-4">Retorna uma lista paginada com todos os produtos da loja do lojista autenticado.</p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/produtos?page=0&size=10</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "content": [
+    {
+      "idProduto": 1,
+      "descricao": "Camiseta Branca",
+      "unidadeMedida": "UN",
+      "preco": 94.90,
+      "imagem": "1a2b3c4d5e",
+      "status": "ATIVO"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
+  "totalElements": 1,
+  "totalPages": 1,
+  "first": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 1,
+  "empty": false
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">3. Criar um Novo Produto</h3>
+                    <p class="mb-4">Cria um novo produto para a loja do lojista autenticado. A requisição deve ser do
+                        tipo <code>multipart/form-data</code> com os dados do produto em JSON e a imagem do produto.</p>
+                    <div class="mb-4">
+                        <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/produtos</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body (multipart/form-data):</h4>
+                        <p class="text-sm">Parte 1: <code>produto</code> (application/json)</p>
+                        <pre><code class="language-json">{
+  "descricao": "Camiseta Branca",
+  "unidadeMedida": "UN",
+  "preco": 94.90
+}</code></pre>
+                        <p class="text-sm">Parte 2: <code>imagem</code> (image/*) - Imagem do produto</p>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "idProduto": 1,
+  "descricao": "Camiseta Branca",
+  "unidadeMedida": "UN",
+  "preco": 94.90,
+  "imagem": "1a2b3c4d5e",
+  "status": "ATIVO"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">201 Created</span>: Produto criado com sucesso.</li>
+                            <li><span class="font-mono status-4xx">400 Bad Request</span>: Tipo de arquivo de imagem
+                                inválido.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Erro de permissão ao acessar o
+                                Google Drive.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Já existe um produto com a mesma
+                                descrição nesta loja.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">4. Importar Produtos via CSV</h3>
+                    <p class="mb-4">Importa múltiplos produtos a partir de um arquivo CSV delimitado por ponto e vírgula
+                        (<code>;</code>). O arquivo deve conter as colunas: <code>descricao;unidadeMedida;preco</code>.
+                    </p>
+                    <div class="mb-4">
+                        <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/produtos/importar</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body (multipart/form-data):</h4>
+                        <p class="text-sm">Parte: <code>produtosCsv</code> (text/csv) - Arquivo CSV com os produtos</p>
+                        <pre><code>descricao;unidade_medida;preco
+SSD Kingston 480GB;UN;249.90
+Memória RAM 16GB DDR4;UN;319.90
+Placa de Vídeo RTX 4060;UN;2399.90
+Processador Intel i7 12700;UN;1899.90
+Headset Gamer HyperX;UN;399.90
+Gabinete Gamer RGB;UN;279.90
+Fonte 600W Corsair;UN;349.90
+Mousepad Gamer Extra Grande;UN;89.90
+HD Externo 1TB Seagate;UN;429.90
+Adaptador USB Wi-Fi;UN;59.90</code></pre>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">[
+  {
+    "idProduto": 2,
+    "descricao": "Camiseta Branca",
+    "unidadeMedida": "UN",
+    "preco": 94.90,
+    "imagem": null,
+    "status": "ATIVO"
+  },
+  {
+    "idProduto": 3,
+    "descricao": "Calça Jeans",
+    "unidadeMedida": "UN",
+    "preco": 159.90,
+    "imagem": null,
+    "status": "ATIVO"
+  }
+]</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">201 Created</span>: Produtos importados com sucesso.
+                            </li>
+                            <li><span class="font-mono status-4xx">400 Bad Request</span>: Tipo de arquivo inválido (não
+                                é CSV) ou arquivo obrigatório ausente.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Estrutura do CSV inválida, preço
+                                inválido/negativo ou descrição duplicada.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">5. Atualizar um Produto</h3>
+                    <p class="mb-4">Atualiza os dados e a imagem de um produto existente. A requisição deve ser do tipo
+                        <code>multipart/form-data</code>.
+                    </p>
+                    <div class="mb-4">
+                        <span class="method-put text-sm font-bold mr-2 px-2.5 py-1 rounded">PUT</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/produtos/{id}</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body (multipart/form-data):</h4>
+                        <p class="text-sm">Parte 1: <code>produto</code> (application/json)</p>
+                        <pre><code class="language-json">{
+  "descricao": "Camiseta Branca Premium",
+  "unidadeMedida": "UN",
+  "preco": 109.90
+}</code></pre>
+                        <p class="text-sm">Parte 2: <code>imagem</code> (image/*) - Nova imagem do produto</p>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "idProduto": 1,
+  "descricao": "Camiseta Branca Premium",
+  "unidadeMedida": "UN",
+  "preco": 109.90,
+  "imagem": "5e4d3c2b1a",
+  "status": "ATIVO"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Produto atualizado com sucesso.</li>
+                            <li><span class="font-mono status-4xx">400 Bad Request</span>: Tipo de arquivo de imagem
+                                inválido.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado ou erro de
+                                permissão no Google Drive.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Produto não encontrado.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Descrição duplicada.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">6. Desativar Produtos em Lote (Soft Delete)</h3>
+                    <p class="mb-4">Desativa um ou mais produtos com base em uma lista de IDs.</p>
+                    <div class="mb-4">
+                        <span class="method-patch text-sm font-bold mr-2 px-2.5 py-1 rounded">PATCH</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/produtos</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body:</h4>
+                        <pre><code class="language-json">[1, 3, 5]</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">204 No Content</span>: Produtos desativados com
+                                sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Um ou mais produtos pertencem a
+                                outra loja.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">7. Deletar um Produto (Permanent Delete)</h3>
+                    <p class="mb-4">Remove permanentemente um produto e sua imagem do Google Drive.</p>
+                    <div class="mb-4">
+                        <span class="method-delete text-sm font-bold mr-2 px-2.5 py-1 rounded">DELETE</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/produtos/{id}/permanent</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">204 No Content</span>: Produto removido com sucesso.
+                            </li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Produto não encontrado.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Falha na integridade referencial
+                                (produto vinculado a vendas).</li>
                         </ul>
                     </div>
                 </div>
@@ -691,15 +1148,18 @@
 
             <!-- Seção Vendas -->
             <section id="vendas" class="mb-16">
-                 <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Vendas</h2>
-                 <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Todos os endpoints nesta seção exigem autenticação via Bearer Token.</p>
-                
+                <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Vendas</h2>
+                <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Todos os endpoints nesta seção
+                    exigem autenticação via Bearer Token. A maioria é restrita ao perfil <strong>Lojista</strong>,
+                    exceto o endpoint 3 que é exclusivo do <strong>Consumidor</strong>.</p>
+
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">1. Buscar Todas as Vendas da Loja</h3>
                     <p class="mb-4">Retorna uma lista paginada com todas as vendas da loja do lojista autenticado.</p>
                     <div class="mb-4">
                         <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
-                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/vendas?page=0&size=10&sort=dataCriacao,desc</code>
+                        <code
+                            class="text-sm bg-gray-800 p-1 rounded-md">/doisv/vendas?page=0&size=10&sort=dataCriacao,desc</code>
                     </div>
                     <div class="space-y-4">
                         <h4 class="font-semibold text-white">Response Body:</h4>
@@ -752,7 +1212,8 @@
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
                             <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
-                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido, expirado ou não fornecido.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido, expirado ou
+                                não fornecido.</li>
                         </ul>
                     </div>
                 </div>
@@ -809,13 +1270,77 @@
                         <ul class="list-disc list-inside space-y-1">
                             <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
                             <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                            <li><span class="font-mono status-4xx">404 Not Found</span>: Nenhuma venda encontrada com o ID fornecido.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Nenhuma venda encontrada com o
+                                ID fornecido.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="mb-12">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">3. Criar uma Nova Venda</h3>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">3. Buscar Venda do Consumidor por Token</h3>
+                    <p class="mb-4">Retorna os detalhes da venda associada ao token de autenticação do consumidor.
+                        Utilizado pelo consumidor para acessar os dados da sua própria venda. <span
+                            class="bg-emerald-900/50 border border-emerald-700 text-emerald-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Consumidor</span></p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/vendas/me</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "idVenda": 1,
+  "serial": "VENDA-20251017-XYZ",
+  "precoTotal": 179.80,
+  "statusPedido": "ENTREGUE",
+  "desconto": 10.00,
+  "formaPagamento": "Cartão de Crédito",
+  "prazoTroca": 30,
+  "prazoDevolucao": 7,
+  "dataCriacao": "17/10/2025",
+  "dataEntrega": "18/10/2025",
+  "loja": {
+    "id": 5,
+    "nome": "Minha Loja",
+    "email": "contato@minhaloja.com"
+  },
+  "consumidor": {
+    "id": 1,
+    "nome": "Ana Silva",
+    "email": "ana.silva@email.com",
+    "celular": "11987654321",
+    "endereco": "Rua das Flores, 123"
+  },
+  "status": "ATIVO",
+  "itens": [
+    {
+      "id": 1,
+      "precoOriginal": 94.90,
+      "precoVendido": 89.90,
+      "percentualVariacao": -5.27,
+      "quantidade": 2.0,
+      "detalhes": "Tamanho G",
+      "produto": {
+        "id": 101,
+        "descricao": "Camiseta Branca"
+      }
+    }
+  ]
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Venda não encontrada para o
+                                token fornecido.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">4. Criar uma Nova Venda</h3>
                     <p class="mb-4">Registra uma nova venda para um consumidor na loja do lojista autenticado.</p>
                     <div class="mb-4">
                         <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
@@ -881,16 +1406,18 @@
 }</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">201 Created</span>: Venda criada com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">409 Conflict</span>: Erro ao enviar e-mail ou outra violação de integridade.</li>
-                           <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação nos campos.</li>
+                            <li><span class="font-mono status-2xx">201 Created</span>: Venda criada com sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Erro ao enviar e-mail ou outra
+                                violação de integridade.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="mb-12">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">4. Atualizar uma Venda</h3>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">5. Atualizar uma Venda</h3>
                     <p class="mb-4">Atualiza os dados de uma venda existente.</p>
                     <div class="mb-4">
                         <span class="method-put text-sm font-bold mr-2 px-2.5 py-1 rounded">PUT</span>
@@ -941,18 +1468,20 @@
 }</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">200 OK</span>: Venda atualizada com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Venda não encontrada.</li>
-                           <li><span class="font-mono status-4xx">409 Conflict</span>: Edição não permitida para o estado atual da venda.</li>
-                           <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação nos campos.</li>
+                            <li><span class="font-mono status-2xx">200 OK</span>: Venda atualizada com sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Venda não encontrada.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Edição não permitida para o
+                                estado atual da venda.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="mb-12">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">5. Desativar Vendas em Lote (Soft Delete)</h3>
+                    <h3 class="text-2xl font-semibold mb-4 text-white">6. Desativar Vendas em Lote (Soft Delete)</h3>
                     <p class="mb-4">Desativa uma ou mais vendas com base em uma lista de IDs.</p>
                     <div class="mb-4">
                         <span class="method-delete text-sm font-bold mr-2 px-2.5 py-1 rounded">DELETE</span>
@@ -963,10 +1492,786 @@
                         <pre><code class="language-json">[1, 2, 5]</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
-                           <li><span class="font-mono status-2xx">204 No Content</span>: Vendas desativadas com sucesso.</li>
-                           <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
-                           <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
-                           <li><span class="font-mono status-4xx">404 Not Found</span>: Um ou mais IDs de venda não encontrados.</li>
+                            <li><span class="font-mono status-2xx">204 No Content</span>: Vendas desativadas com
+                                sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Um ou mais IDs de venda não
+                                encontrados.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Seção Solicitações -->
+            <section id="solicitacoes" class="mb-16">
+                <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Solicitações
+                    (Trocas/Devoluções)</h2>
+                <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Todos os endpoints nesta seção
+                    exigem autenticação via Bearer Token. Os acessos são divididos entre <strong>Consumidor</strong>
+                    (criar, editar e cancelar) e <strong>Lojista</strong> (listar, aprovar, reprovar e atualizar
+                    status).</p>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">1. Buscar Todas as Solicitações da Loja</h3>
+                    <p class="mb-4">Retorna uma lista paginada com todas as solicitações de troca/devolução da loja do
+                        lojista autenticado. <span
+                            class="bg-blue-900/50 border border-blue-700 text-blue-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Lojista</span></p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code
+                            class="text-sm bg-gray-800 p-1 rounded-md">/doisv/solicitacoes?page=0&size=10&sort=dataSolicitacao,desc</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "content": [
+    {
+      "id": 1,
+      "consumidor": "Ana Silva",
+      "idVenda": 1,
+      "tipo": "Troca",
+      "motivo": "Produto com defeito",
+      "dataSolicitacao": "20/10/2025 14:30",
+      "dataAtualizacao": null,
+      "statusSolicitacao": "Pendente",
+      "status": "Ativo"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "empty": false,
+      "sorted": true,
+      "unsorted": false
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
+  "totalElements": 1,
+  "totalPages": 1,
+  "first": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": false,
+    "sorted": true,
+    "unsorted": false
+  },
+  "numberOfElements": 1,
+  "empty": false
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">2. Buscar Solicitação por ID</h3>
+                    <p class="mb-4">Retorna os detalhes completos de uma solicitação específica, incluindo dados da
+                        venda, consumidor, produto, anexos e histórico de atualizações. <span
+                            class="bg-blue-900/50 border border-blue-700 text-blue-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Lojista</span></p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/solicitacoes/{id}</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "id": 1,
+  "tipo": "Troca",
+  "quantidade": 1.0,
+  "motivo": "Produto com defeito",
+  "dataSolicitacao": "20/10/2025 14:30",
+  "dataAtualizacao": "21/10/2025 09:00",
+  "statusSolicitacao": "Aprovada",
+  "status": "Ativo",
+  "venda": {
+    "idVenda": 1,
+    "serial": "VENDA-20251017-XYZ",
+    "dataCriacao": "17/10/2025",
+    "dataEntrega": "18/10/2025"
+  },
+  "consumidor": {
+    "idConsumidor": 1,
+    "nome": "Ana Silva",
+    "cpf_cnpj": "111.111.111-11",
+    "email": "ana.silva@email.com",
+    "celular": "11987654321",
+    "telefone": "1143215678",
+    "endereco": "Rua das Flores, 123, São Paulo, SP",
+    "status": "ATIVO"
+  },
+  "produto": {
+    "id": 1,
+    "descricao": "Camiseta Branca",
+    "precoOriginal": 94.90,
+    "precoVendido": 89.90,
+    "quantidade": 1.0
+  },
+  "anexos": [
+    "https://drive.google.com/arquivo1.jpg",
+    "https://drive.google.com/arquivo2.mp4"
+  ],
+  "historico": [
+    {
+      "id": 1,
+      "statusAnterior": "Pendente",
+      "statusNovo": "Aprovada",
+      "dataAtualizacao": "21/10/2025 09:00",
+      "observacao": "Solicitação de troca aprovada!"
+    }
+  ]
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Solicitação pertence a outra
+                                loja.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Solicitação não encontrada.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">3. Criar uma Nova Solicitação</h3>
+                    <p class="mb-4">Registra uma solicitação de troca ou devolução para uma venda. A requisição deve ser
+                        do tipo <code>multipart/form-data</code>. Aceita anexos de imagens e vídeos como evidência.
+                        <span
+                            class="bg-emerald-900/50 border border-emerald-700 text-emerald-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Consumidor</span>
+                    </p>
+                    <div class="mb-4">
+                        <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/solicitacoes/criar</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body (multipart/form-data):</h4>
+                        <p class="text-sm">Parte 1: <code>solicitacao</code> (application/json)</p>
+                        <pre><code class="language-json">{
+  "idItem": 1,
+  "quantidade": 1.0,
+  "tipo": "troca",
+  "motivo": "Produto com defeito na costura"
+}</code></pre>
+                        <p class="text-sm">Parte 2: <code>anexos</code> (image/*, video/*) - Arquivos de evidência
+                            (imagens e vídeos)</p>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "id": 1,
+  "consumidor": "Ana Silva",
+  "idVenda": 1,
+  "tipo": "Troca",
+  "motivo": "Produto com defeito na costura",
+  "dataSolicitacao": "20/10/2025 14:30",
+  "dataAtualizacao": null,
+  "statusSolicitacao": "Pendente",
+  "status": "Ativo"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Solicitação criada com sucesso.</li>
+                            <li><span class="font-mono status-4xx">400 Bad Request</span>: Tipo de arquivo inválido ou
+                                erro no formato.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Venda ou item não encontrado.
+                            </li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Prazo expirado, quantidade
+                                inválida ou status da venda não permite solicitação.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">4. Editar uma Solicitação</h3>
+                    <p class="mb-4">Permite ao consumidor editar os dados de uma solicitação pendente, incluindo a
+                        atualização dos anexos. A requisição deve ser do tipo <code>multipart/form-data</code>. <span
+                            class="bg-emerald-900/50 border border-emerald-700 text-emerald-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Consumidor</span></p>
+                    <div class="mb-4">
+                        <span class="method-put text-sm font-bold mr-2 px-2.5 py-1 rounded">PUT</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/solicitacoes/{id}</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body (multipart/form-data):</h4>
+                        <p class="text-sm">Parte 1: <code>solicitacao</code> (application/json)</p>
+                        <pre><code class="language-json">{
+  "idItem": 1,
+  "quantidade": 2.0,
+  "tipo": "devolucao",
+  "motivo": "Motivo atualizado"
+}</code></pre>
+                        <p class="text-sm">Parte 2: <code>anexos</code> (image/*, video/*) - Novos arquivos de evidência
+                        </p>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "id": 1,
+  "consumidor": "Ana Silva",
+  "idVenda": 1,
+  "tipo": "Devolução",
+  "motivo": "Motivo atualizado",
+  "dataSolicitacao": "20/10/2025 14:30",
+  "dataAtualizacao": null,
+  "statusSolicitacao": "Pendente",
+  "status": "Ativo"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Solicitação editada com sucesso.</li>
+                            <li><span class="font-mono status-4xx">400 Bad Request</span>: Tipo de arquivo inválido.
+                            </li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Solicitação ou item não
+                                encontrado.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Solicitação não pode mais ser
+                                alterada no status atual.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">5. Aprovar uma Solicitação</h3>
+                    <p class="mb-4">Aprova uma solicitação pendente. A quantidade solicitada é separada do item original
+                        da venda e vinculada à solicitação. <span
+                            class="bg-blue-900/50 border border-blue-700 text-blue-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Lojista</span></p>
+                    <div class="mb-4">
+                        <span class="method-put text-sm font-bold mr-2 px-2.5 py-1 rounded">PUT</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/solicitacoes/aprovar/{id}</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "id": 1,
+  "consumidor": "Ana Silva",
+  "idVenda": 1,
+  "tipo": "Troca",
+  "motivo": "Produto com defeito na costura",
+  "dataSolicitacao": "20/10/2025 14:30",
+  "dataAtualizacao": "21/10/2025 09:00",
+  "statusSolicitacao": "Aprovada",
+  "status": "Ativo"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Solicitação aprovada com sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Solicitação não encontrada.
+                            </li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Solicitação não pode ser
+                                aprovada no status atual.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">6. Reprovar uma Solicitação</h3>
+                    <p class="mb-4">Reprova uma solicitação pendente. A solicitação é inativada e seus anexos são
+                        excluídos do Google Drive. <span
+                            class="bg-blue-900/50 border border-blue-700 text-blue-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Lojista</span></p>
+                    <div class="mb-4">
+                        <span class="method-put text-sm font-bold mr-2 px-2.5 py-1 rounded">PUT</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/solicitacoes/reprovar/{id}</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "id": 1,
+  "consumidor": "Ana Silva",
+  "idVenda": 1,
+  "tipo": "Troca",
+  "motivo": "Produto com defeito na costura",
+  "dataSolicitacao": "20/10/2025 14:30",
+  "dataAtualizacao": "21/10/2025 10:00",
+  "statusSolicitacao": "Rejeitada",
+  "status": "Inativo"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Solicitação reprovada com sucesso.
+                            </li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Solicitação não encontrada.
+                            </li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Solicitação não pode ser
+                                reprovada no status atual.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">7. Atualizar Status da Solicitação</h3>
+                    <p class="mb-4">Atualiza o status de uma solicitação aprovada, registrando um novo histórico. Quando
+                        o tipo é "Troca" e o status final é "Concluída", uma nova venda pode ser gerada com os novos
+                        produtos. <span
+                            class="bg-blue-900/50 border border-blue-700 text-blue-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Lojista</span></p>
+                    <div class="mb-4">
+                        <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/solicitacoes/atualizar/{id}</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body (multipart/form-data):</h4>
+                        <p class="text-sm">Parte 1: <code>historico</code> (application/json)</p>
+                        <pre><code class="language-json">{
+  "statusNovo": "Em Trânsito",
+  "observacao": "Produto enviado para análise"
+}</code></pre>
+                        <p class="text-sm">Parte 2: <code>novosProdutos</code> (application/json, opcional) - Lista de
+                            novos itens para troca</p>
+                        <pre><code class="language-json">[
+  {
+    "idProduto": 102,
+    "quantidade": 1.0,
+    "detalhe": "Tamanho M",
+    "valorVendido": 89.90
+  }
+]</code></pre>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <p class="text-sm">Mesmo formato do endpoint "Buscar Solicitação por ID" (resposta detalhada).
+                        </p>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Status atualizado com sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Solicitação não encontrada.
+                            </li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Solicitação não pode ser
+                                atualizada no status atual.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">8. Cancelar uma Solicitação</h3>
+                    <p class="mb-4">Cancela uma solicitação que ainda esteja em status que permita cancelamento
+                        (Pendente ou Aprovada). A solicitação é inativada, os anexos são excluídos e o item é
+                        restaurado. <span
+                            class="bg-emerald-900/50 border border-emerald-700 text-emerald-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Consumidor</span></p>
+                    <div class="mb-4">
+                        <span class="method-put text-sm font-bold mr-2 px-2.5 py-1 rounded">PUT</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/solicitacoes/cancelar/{id}</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body:</h4>
+                        <pre><code class="language-json">{
+  "idItem": 1,
+  "quantidade": 1.0,
+  "tipo": "troca",
+  "motivo": "Desistência do consumidor"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "id": 1,
+  "consumidor": "Ana Silva",
+  "idVenda": 1,
+  "tipo": "Troca",
+  "motivo": "Desistência do consumidor",
+  "dataSolicitacao": "20/10/2025 14:30",
+  "dataAtualizacao": "22/10/2025 11:00",
+  "statusSolicitacao": "Cancelada",
+  "status": "Inativo"
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Solicitação cancelada com sucesso.
+                            </li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido.</li>
+                            <li><span class="font-mono status-4xx">403 Forbidden</span>: Acesso negado.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Solicitação ou item não
+                                encontrado.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Solicitação não pode ser
+                                cancelada no status atual (Em Trânsito, Concluída ou já Cancelada).</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Seção Feedbacks -->
+            <section id="feedbacks" class="mb-16">
+                <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Feedbacks</h2>
+                <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Os endpoints 1, 2 e 4 exigem
+                    autenticação via Bearer Token. O endpoint 3 (listar por loja) é público e não requer autenticação.
+                </p>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">1. Buscar Feedback por ID</h3>
+                    <p class="mb-4">Retorna os detalhes de um feedback específico. <span
+                            class="bg-blue-900/50 border border-blue-700 text-blue-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Lojista</span></p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/feedbacks/{id}</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "idFeedback": 1,
+  "tipoFeedback": "Atendimento",
+  "nota": 5,
+  "comentario": "Ótimo atendimento na troca do produto!",
+  "dataFeedback": "25/10/2025",
+  "idConsumidor": 1,
+  "nomeConsumidor": "Ana",
+  "idLoja": 5,
+  "idSolicitacao": 1
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Feedback não encontrado.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">2. Buscar Feedbacks por Solicitação</h3>
+                    <p class="mb-4">Retorna todos os feedbacks associados a uma solicitação específica. <span
+                            class="bg-purple-900/50 border border-purple-700 text-purple-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Lojista ou Consumidor</span></p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code
+                            class="text-sm bg-gray-800 p-1 rounded-md">/doisv/feedbacks/solicitacoes/{idSolicitacao}</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">[
+  {
+    "idFeedback": 1,
+    "tipoFeedback": "Atendimento",
+    "nota": 5,
+    "comentario": "Ótimo atendimento na troca do produto!",
+    "dataFeedback": "25/10/2025",
+    "idConsumidor": 1,
+    "nomeConsumidor": "Ana",
+    "idLoja": 5,
+    "idSolicitacao": 1
+  }
+]</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Solicitação não encontrada ou
+                                consumidor sem acesso.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">3. Listar Feedbacks Públicos por Loja</h3>
+                    <p class="mb-4">Retorna uma lista paginada de feedbacks públicos de uma loja. <span
+                            class="bg-green-900/50 border border-green-700 text-green-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Público</span> Os dados de consumidor e solicitação são omitidos por privacidade. O
+                        parâmetro <code>periodo</code> define o número de dias retroativos a partir da data atual
+                        (padrão: 180).</p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code
+                            class="text-sm bg-gray-800 p-1 rounded-md">/doisv/feedbacks/lojas/{idPublicoLoja}?periodo=180&page=0&size=10</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Parâmetros:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><code>idPublicoLoja</code> (UUID, path) - Identificador público da loja.</li>
+                            <li><code>periodo</code> (Integer, query, opcional) - Número de dias retroativos para
+                                filtrar. Padrão: 180.</li>
+                        </ul>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "content": [
+    {
+      "idSolicitacao": null,
+      "nomeConsumidor": null,
+      "comentario": "Ótimo atendimento na troca do produto!",
+      "nota": 5,
+      "dataFeedback": "25/10/2025"
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
+  "totalElements": 1,
+  "totalPages": 1,
+  "first": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 1,
+  "empty": false
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">4. Criar um Feedback</h3>
+                    <p class="mb-4">Registra um novo feedback para uma solicitação concluída. A solicitação deve estar
+                        com status "Concluída" e não pode existir outro feedback do
+                        mesmo tipo para a mesma solicitação. <span
+                            class="bg-emerald-900/50 border border-emerald-700 text-emerald-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Consumidor</span></p>
+                    <div class="mb-4">
+                        <span class="method-post text-sm font-bold mr-2 px-2.5 py-1 rounded">POST</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/feedbacks</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Request Body:</h4>
+                        <pre><code class="language-json">{
+  "tipoFeedback": "Atendimento",
+  "nota": 5,
+  "comentario": "Ótimo atendimento na troca do produto!",
+  "idLoja": 5,
+  "idSolicitacao": 1
+}</code></pre>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "idFeedback": 1,
+  "tipoFeedback": "Atendimento",
+  "nota": 5,
+  "comentario": "Ótimo atendimento na troca do produto!",
+  "dataFeedback": "25/10/2025",
+  "idConsumidor": 1,
+  "nomeConsumidor": "Ana",
+  "idLoja": 5,
+  "idSolicitacao": 1
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">201 Created</span>: Feedback criado com sucesso.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">404 Not Found</span>: Solicitação, loja ou consumidor
+                                não encontrado.</li>
+                            <li><span class="font-mono status-4xx">409 Conflict</span>: Solicitação ainda não concluída,
+                                feedback duplicado ou consumidor divergente.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Erro de validação
+                                nos campos (nota fora do intervalo 1-5, campos obrigatórios ausentes).</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Seção Métricas -->
+            <section id="metricas" class="mb-16">
+                <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Métricas</h2>
+                <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Os endpoints 1 e 3 exigem
+                    autenticação via Bearer Token (lojista). O endpoint 2 (métricas públicas) não requer autenticação.
+                </p>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">1. Métricas Privadas da Loja</h3>
+                    <p class="mb-4">Retorna métricas detalhadas da loja do lojista autenticado, incluindo notas médias
+                        por tipo de feedback, quantidade de feedbacks, percentual de solicitações por tipo
+                        (troca/devolução) e as avaliações resumidas. O parâmetro <code>periodo</code> define o número de
+                        dias retroativos (padrão: 365). <span
+                            class="bg-blue-900/50 border border-blue-700 text-blue-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Lojista</span></p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/metricas/privadas?periodo=365</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Parâmetros:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><code>periodo</code> (Integer, query, opcional) - Número de dias retroativos. Padrão:
+                                365.</li>
+                        </ul>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "notaMedia": {
+    "loja": 4.50,
+    "solicitacao": 4.20
+  },
+  "totalVendas": 15,
+  "quantidadeFeedbackPorTipo": {
+    "loja": 8,
+    "solicitacao": 7
+  },
+  "percentualPorTipo": {
+    "troca": 66.67,
+    "devolucao": 33.33
+  },
+  "avaliacoes": {
+    "loja": [
+      {
+        "idSolicitacao": 1,
+        "nomeConsumidor": "Ana",
+        "comentario": "Ótimo atendimento!",
+        "nota": 5,
+        "dataFeedback": "25/10/2025"
+      }
+    ],
+    "solicitacao": [
+      {
+        "idSolicitacao": 2,
+        "nomeConsumidor": "Bruno",
+        "comentario": "Troca rápida e eficiente",
+        "nota": 4,
+        "dataFeedback": "26/10/2025"
+      }
+    ]
+  }
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Nenhum feedback
+                                encontrado para o período ou parâmetros inválidos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">2. Métricas Públicas de Todas as Lojas</h3>
+                    <p class="mb-4">Retorna uma lista paginada com métricas públicas de todas as lojas, incluindo notas
+                        médias e total de avaliações. <span
+                            class="bg-green-900/50 border border-green-700 text-green-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Público</span></p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code
+                            class="text-sm bg-gray-800 p-1 rounded-md">/doisv/metricas/publicas?periodo=180&page=0&size=10</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Parâmetros:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><code>periodo</code> (Integer, query, opcional) - Número de dias retroativos. Padrão:
+                                180.</li>
+                        </ul>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "content": [
+    {
+      "idLoja": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "nomeLoja": "Minha Loja",
+      "logo": "https://drive.google.com/logo.png",
+      "segmento": "Vestuário",
+      "totalAvaliacoes": 15,
+      "notaMedia": {
+        "loja": 4.50,
+        "solicitacao": 4.20
+      }
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "empty": true,
+      "sorted": false,
+      "unsorted": true
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
+  "totalElements": 1,
+  "totalPages": 1,
+  "first": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "sorted": false,
+    "unsorted": true
+  },
+  "numberOfElements": 1,
+  "empty": false
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">3. Quantidade de Solicitações por Status</h3>
+                    <p class="mb-4">Retorna a contagem de solicitações agrupadas por status para a loja do lojista
+                        autenticado. Todos os status possíveis são retornados, mesmo que com valor zero. <span
+                            class="bg-blue-900/50 border border-blue-700 text-blue-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
+                            Lojista</span></p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code
+                            class="text-sm bg-gray-800 p-1 rounded-md">/doisv/metricas/solicitacoes/por-status?periodo=365</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Parâmetros:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><code>periodo</code> (Integer, query, opcional) - Número de dias retroativos. Padrão:
+                                365.</li>
+                        </ul>
+                        <h4 class="font-semibold text-white">Response Body:</h4>
+                        <pre><code class="language-json">{
+  "pendente": 3,
+  "aprovada": 5,
+  "rejeitada": 1,
+  "cancelada": 2,
+  "em_andamento": 1,
+  "em_transito": 0,
+  "concluida": 4
+}</code></pre>
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Requisição bem-sucedida.</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido ou não
+                                fornecido.</li>
+                            <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Parâmetros inválidos
+                                (período nulo ou negativo).</li>
                         </ul>
                     </div>
                 </div>
@@ -976,4 +2281,5 @@
     </div>
 
 </body>
+
 </html>
