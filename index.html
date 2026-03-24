@@ -1167,47 +1167,39 @@ Adaptador USB Wi-Fi;UN;59.90</code></pre>
   "content": [
     {
       "idVenda": 1,
-      "serial": "VENDA-20251017-XYZ",
-      "precoTotal": 179.80,
-      "statusPedido": "PAGO",
-      "desconto": 10.00,
-      "formaPagamento": "Cartão de Crédito",
-      "prazoTroca": 30,
-      "prazoDevolucao": 7,
+      "nomeConsumidor": "Ana Silva",
       "dataCriacao": "17/10/2025",
-      "dataEntrega": "",
-      "loja": {
-        "id": 5,
-        "nome": "Minha Loja",
-        "email": "contato@minhaloja.com"
-      },
-      "consumidor": {
-        "id": 1,
-        "nome": "Ana Silva",
-        "email": "ana.silva@email.com",
-        "celular": "11987654321",
-        "endereco": "Rua das Flores, 123"
-      },
-      "status": "ATIVO",
-      "itens": [
-        {
-          "id": 1,
-          "precoOriginal": 94.90,
-          "precoVendido": 89.90,
-          "percentualVariacao": -5.27,
-          "quantidade": 2.0,
-          "detalhes": "Tamanho G",
-          "produto": {
-            "id": 101,
-            "descricao": "Camiseta Branca"
-          }
-        }
-      ]
+      "precoTotal": 179.80,
+      "formaPagamento": "Cartão de Crédito",
+      "statusPedido": "Em Andamento",
+      "status": "ATIVO"
     }
   ],
-  "pageable": { /* ... dados de paginação ... */ },
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 10,
+    "sort": {
+      "empty": false,
+      "sorted": true,
+      "unsorted": false
+    },
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
   "totalElements": 1,
-  "totalPages": 1
+  "totalPages": 1,
+  "first": true,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "empty": false,
+    "sorted": true,
+    "unsorted": false
+  },
+  "numberOfElements": 1,
+  "empty": false
 }</code></pre>
                         <h4 class="font-semibold text-white">Status Codes:</h4>
                         <ul class="list-disc list-inside space-y-1">
@@ -1231,7 +1223,7 @@ Adaptador USB Wi-Fi;UN;59.90</code></pre>
   "idVenda": 1,
   "serial": "VENDA-20251017-XYZ",
   "precoTotal": 179.80,
-  "statusPedido": "PAGO",
+  "statusPedido": "Em Andamento",
   "desconto": 10.00,
   "formaPagamento": "Cartão de Crédito",
   "prazoTroca": 30,
@@ -1292,7 +1284,7 @@ Adaptador USB Wi-Fi;UN;59.90</code></pre>
   "idVenda": 1,
   "serial": "VENDA-20251017-XYZ",
   "precoTotal": 179.80,
-  "statusPedido": "ENTREGUE",
+  "statusPedido": "Entregue",
   "desconto": 10.00,
   "formaPagamento": "Cartão de Crédito",
   "prazoTroca": 30,
@@ -1354,7 +1346,7 @@ Adaptador USB Wi-Fi;UN;59.90</code></pre>
   "prazoTroca": 30,
   "prazoDevolucao": 7,
   "formaPagamento": "Cartão de Crédito",
-  "statusPedido": "PAGO",
+  "statusPedido": "Em Andamento",
   "itensVenda": [
     {
       "idProduto": 101,
@@ -1369,7 +1361,7 @@ Adaptador USB Wi-Fi;UN;59.90</code></pre>
   "idVenda": 2,
   "serial": "VENDA-20251017-ABC",
   "precoTotal": 169.80,
-  "statusPedido": "PAGO",
+  "statusPedido": "Em Andamento",
   "desconto": 10.00,
   "formaPagamento": "Cartão de Crédito",
   "prazoTroca": 30,
@@ -1431,7 +1423,7 @@ Adaptador USB Wi-Fi;UN;59.90</code></pre>
   "idVenda": 1,
   "serial": "VENDA-20251017-XYZ",
   "precoTotal": 179.80,
-  "statusPedido": "ENTREGUE",
+  "statusPedido": "Entregue",
   "desconto": 10.00,
   "formaPagamento": "Cartão de Crédito",
   "prazoTroca": 30,
@@ -1578,7 +1570,7 @@ Adaptador USB Wi-Fi;UN;59.90</code></pre>
                 <div class="mb-12">
                     <h3 class="text-2xl font-semibold mb-4 text-white">2. Buscar Solicitação por ID</h3>
                     <p class="mb-4">Retorna os detalhes completos de uma solicitação específica, incluindo dados da
-                        venda, consumidor, produto, anexos e histórico de atualizações. <span
+                        venda, consumidor, produto, anexos, histórico de atualizações e feedbacks. <span
                             class="bg-blue-900/50 border border-blue-700 text-blue-300 text-xs font-semibold px-2 py-0.5 rounded">Acesso:
                             Lojista</span></p>
                     <div class="mb-4">
@@ -1630,6 +1622,19 @@ Adaptador USB Wi-Fi;UN;59.90</code></pre>
       "statusNovo": "Aprovada",
       "dataAtualizacao": "21/10/2025 09:00",
       "observacao": "Solicitação de troca aprovada!"
+    }
+  ],
+  "feedbacks": [
+    {
+      "idFeedback": 1,
+      "tipoFeedback": "Solicitação",
+      "nota": 5,
+      "comentario": "Atendimento excelente, problema resolvido rapidamente!",
+      "dataFeedback": "22/10/2025",
+      "idConsumidor": 1,
+      "nomeConsumidor": "Ana",
+      "idLoja": 5,
+      "idSolicitacao": 1
     }
   ]
 }</code></pre>
