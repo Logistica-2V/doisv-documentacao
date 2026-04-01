@@ -1417,7 +1417,22 @@ Adaptador USB Wi-Fi;UN;59.90</code></pre>
                     </div>
                     <div class="space-y-4">
                         <h4 class="font-semibold text-white">Request Body:</h4>
-                        <p>Mesmo formato do endpoint "Criar uma Nova Venda".</p>
+                        <pre><code class="language-json">{
+  "idConsumidor": 7,
+  "statusPedido": "Entregue",
+  "desconto": 199.90,
+  "formaPagamento": "Pix",
+  "prazoTroca": 10,
+  "prazoDevolucao": 0,
+  "itensVenda": [
+    { "idItemVenda": 13, "idProduto": 27, "quantidade": 1.0, "detalhe": "Semi novo", "valorVendido": 1000.00 },
+    { "idItemVenda": 14, "idProduto": 1,  "quantidade": 2.0, "detalhe": "", "valorVendido": 79.90 },
+    { "idItemVenda": 15, "idProduto": 21, "quantidade": 1.0, "detalhe": "", "valorVendido": 270.00 },
+    { "idItemVenda": 16, "idProduto": 30, "quantidade": 2.0, "detalhe": "Brinde", "valorVendido": 0.0 },
+    { "idItemVenda": 17, "idProduto": 30, "quantidade": 2.0, "detalhe": "", "valorVendido": 5.0 },
+    { "idItemVenda": null, "idProduto": 21, "quantidade": 1.0, "detalhe": "Novo item adicionado", "valorVendido": 250.00 }
+  ]
+}</code></pre>
                         <h4 class="font-semibold text-white">Response Body:</h4>
                         <pre><code class="language-json">{
   "idVenda": 1,
