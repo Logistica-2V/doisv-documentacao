@@ -138,6 +138,8 @@
                             class="font-semibold text-gray-400 hover:text-white transition-colors">Feedbacks</a></li>
                     <li><a href="#metricas"
                             class="font-semibold text-gray-400 hover:text-white transition-colors">Métricas</a></li>
+                    <li><a href="#relatorios"
+                            class="font-semibold text-gray-400 hover:text-white transition-colors">Relatórios</a></li>
                 </ul>
             </nav>
         </aside>
@@ -2292,6 +2294,83 @@ Adaptador USB Wi-Fi;UN;59.90</code></pre>
                                 fornecido.</li>
                             <li><span class="font-mono status-4xx">422 Unprocessable Entity</span>: Parâmetros inválidos
                                 (período nulo ou negativo).</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Seção Relatórios -->
+            <section id="relatorios" class="mb-16">
+                <h2 class="text-3xl font-bold border-b border-gray-700 pb-4 mb-8 text-white">Recurso: Relatórios</h2>
+                <p class="mb-8 bg-blue-900/50 border border-blue-700 p-4 rounded-md">Todos os endpoints nesta seção
+                    exigem autenticação via Bearer Token e são restritos ao perfil <strong>Lojista</strong>. Os dados
+                    retornados pertencem exclusivamente à loja do lojista autenticado.</p>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">1. Exportar Relatório em Excel</h3>
+                    <p class="mb-4">Gera e retorna um arquivo <code>.xlsx</code> (Excel) contendo os dados do relatório
+                        solicitado. O arquivo é disponibilizado como download direto (<code>attachment</code>). Os dados
+                        são filtrados automaticamente pela loja do lojista autenticado.</p>
+                    <div class="mb-4">
+                        <span class="method-get text-sm font-bold mr-2 px-2.5 py-1 rounded">GET</span>
+                        <code class="text-sm bg-gray-800 p-1 rounded-md">/doisv/relatorios/{relatorio}/excel</code>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-white">Parâmetros:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><code>{relatorio}</code> (String, path, obrigatório) — Nome do relatório desejado.
+                                Valores aceitos:
+                                <ul class="list-disc list-inside ml-6 mt-1 space-y-1">
+                                    <li><code>consumidores</code> — Exporta todos os consumidores da loja.</li>
+                                    <li><code>vendas</code> — Exporta todas as vendas da loja.</li>
+                                    <li><code>solicitacoes</code> — Exporta todas as solicitações da loja.</li>
+                                    <li><code>produtos</code> — Exporta todos os produtos da loja.</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h4 class="font-semibold text-white">Response (arquivo binário):</h4>
+                        <p class="text-sm">Retorna o arquivo Excel diretamente no corpo da resposta com os headers:
+                        </p>
+                        <pre><code class="language-json">Content-Disposition: attachment; filename="relatorio_{relatorio}.xlsx"
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+Content-Length: {tamanho_em_bytes}</code></pre>
+
+                        <h4 class="font-semibold text-white">Estrutura das planilhas geradas:</h4>
+
+                        <p class="font-medium text-gray-300 mt-2">📋 <strong>consumidores</strong> — Aba: <em>Consumidores</em></p>
+                        <pre><code class="language-json">Colunas: ["ID", "Nome", "CPF/CNPJ", "E-mail", "Celular", "Telefone", "Endereço", "Status"]</code></pre>
+
+                        <p class="font-medium text-gray-300 mt-2">📋 <strong>vendas</strong> — Aba: <em>Vendas</em></p>
+                        <pre><code class="language-json">Colunas: ["ID", "Serial", "Consumidor", "Status do pedido", "Preço total", "Desconto", "Forma de pagamento", "Data de criação", "Data de entrega", "Status"]</code></pre>
+
+                        <p class="font-medium text-gray-300 mt-2">📋 <strong>solicitacoes</strong> — Aba: <em>Solicitações</em></p>
+                        <pre><code class="language-json">Colunas: ["ID", "Tipo", "Consumidor", "Serial da venda", "Produto", "Quantidade", "Motivo", "Status da solicitação", "Data da solicitação", "Última atualização"]</code></pre>
+
+                        <p class="font-medium text-gray-300 mt-2">📋 <strong>produtos</strong> — Aba: <em>Produtos</em></p>
+                        <pre><code class="language-json">Colunas: ["ID", "Descrição", "Unidade de medida", "Preço", "Status"]</code></pre>
+
+                        <h4 class="font-semibold text-white">Formatação dos dados:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Datas com hora são formatadas como <code>dd/MM/yyyy HH:mm:ss</code>.</li>
+                            <li>Datas sem hora são formatadas como <code>dd/MM/yyyy</code>.</li>
+                            <li>Valores numéricos (preço, desconto, quantidade) são exportados como número.</li>
+                            <li>Campos nulos ou ausentes são exportados como célula vazia.</li>
+                            <li>O cabeçalho da planilha possui fonte branca em fundo azul escuro e negrito.</li>
+                            <li>As colunas têm largura ajustada automaticamente ao conteúdo (<em>autoSizeColumn</em>).</li>
+                        </ul>
+
+                        <h4 class="font-semibold text-white">Status Codes:</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><span class="font-mono status-2xx">200 OK</span>: Arquivo gerado e retornado com
+                                sucesso.</li>
+                            <li><span class="font-mono status-4xx">400 Bad Request</span>: Nome do relatório
+                                inválido (ex.: <code>/doisv/relatorios/invalido/excel</code>).</li>
+                            <li><span class="font-mono status-4xx">401 Unauthorized</span>: Token inválido, expirado
+                                ou não fornecido.</li>
+                            <li><span class="font-mono status-5xx">500 Internal Server Error</span>: Erro ao gerar o
+                                arquivo Excel no servidor.</li>
                         </ul>
                     </div>
                 </div>
